@@ -68,7 +68,7 @@ operatorButtons.forEach(button => {
                 if (displayValue.includes('.'))
                     disableDotButton(true);
                 break;
-            case 'backspa':
+            case 'backspace':
                 displayValue = displayValue.replace(
                     displayValue.charAt(displayValue.length - 1), ''
                 );
@@ -83,7 +83,7 @@ operatorButtons.forEach(button => {
                 updateDisplay();
                 break;
             case '=':
-                if (!firstNumber || !displayValue)
+                if (!displayValue)
                     break;
                 secondNumber = parseFloat(displayValue);
                 displayValue = operate(operator, firstNumber, secondNumber);
