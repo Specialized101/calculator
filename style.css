@@ -30,17 +30,17 @@
     grid-template-columns: 100px 100px 100px 100px 100px;
     grid-template-rows: 100px 100px 100px 100px;
     grid-template-areas: 
-    "btn-7 btn-8 btn-9 btn-div      .     "
-    "btn-4 btn-5 btn-6 btn-mult     .     "
-    "btn-1 btn-2 btn-3 btn-minus btn-equal"
-    "btn-0   .     .   btn-plus  btn-equal";
+    "btn-7 btn-8 btn-9   btn-div   btn-clear"
+    "btn-4 btn-5 btn-6   btn-mult  btn-del  "
+    "btn-1 btn-2 btn-3   btn-minus btn-equal"
+    "btn-0 btn-0 btn-dot btn-plus  btn-equal";
     gap: 2px;
     justify-content: center;
     align-content: center;
 }
 
 .btn {
-    font-size: 20px;
+    font-size: 45px;
 }
 
 .btn-1 {
@@ -101,4 +101,12 @@
 
 .btn-equal {
     grid-area: btn-equal;
+}
+
+.btn-del {
+    grid-area: btn-del;
+}
+
+.btn-dot {
+    grid-area: btn-dot;
 }

@@ -5,11 +5,11 @@ const divide = (a, b) => a / b;
 const operate = (operator, a, b) => {
     switch (operator) {
         case '+':
-            return add(a, b);
+            return Math.round(add(a, b) * 100) / 100;
         case '-':
-            return substract(a, b);
+            return Math.round(substract(a, b) * 100) / 100;
         case '*':
-            return multiply(a, b);
+            return Math.round(multiply(a, b) * 100) / 100;
         case '/':
             if (b === 0)
                 return 'LOL';
@@ -25,7 +25,10 @@ const updateDisplay = () => {
 const buttons = document.querySelectorAll('.btn');
 const numericButtons = Array.from(buttons).filter(button => !isNaN(button.value));
 const operatorButtons = Array.from(buttons).filter(button => isNaN(button.value));
-
+const disableDotButton = (value) => {
+    let dotBtn = document.querySelector('.btn-dot');
+    dotBtn.disabled = value;
+};
 
 let displayValue = '';
 
@@ -47,6 +50,7 @@ operatorButtons.forEach(button => {
             case '-':
             case '/':
             case '*':
+                disableDotButton(false);
                 if (operator) {
                     secondNumber = parseFloat(displayValue);
                     displayValue = operate(operator, firstNumber, secondNumber);
@@ -56,14 +60,25 @@ operatorButtons.forEach(button => {
                 updateDisplay();
                 displayValue = '';
                 break;
+            case '.':
+                if(displayValue === '')
+                    displayValue = '0';
+                displayValue = displayValue.concat(button.value);
+                updateDisplay(displayValue);
+                if (displayValue.includes('.'))
+                    disableDotButton(true);
+                break;
             case 'clear':
                 displayValue = '';
                 firstNumber = null;
                 secondNumber = null;
                 operator = null;
+                disableDotButton(false);
                 updateDisplay();
                 break;
             case '=':
+                if (!firstNumber || !displayValue)
+                    break;
                 secondNumber = parseFloat(displayValue);
                 displayValue = operate(operator, firstNumber, secondNumber);
                 operator = null;
