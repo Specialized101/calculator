@@ -68,7 +68,7 @@ operatorButtons.forEach(button => {
                 if (displayValue.includes('.'))
                     disableDotButton(true);
                 break;
-            case 'del':
+            case 'backspa':
                 displayValue = displayValue.replace(
                     displayValue.charAt(displayValue.length - 1), ''
                 );
@@ -94,4 +94,12 @@ operatorButtons.forEach(button => {
     });
 });
 
+const body = document.body;
 
+body.addEventListener('keydown', (e) => {
+    e.preventDefault();
+    const btn = Array.from(buttons).filter(button => button.value === e.key);
+    
+    btn.forEach(button => button.click());
+
+});
