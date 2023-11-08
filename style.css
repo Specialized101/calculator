@@ -3,3 +3,102 @@
     padding: 0;
     margin: 0;
 }
+
+#container {
+    width: 520px;
+    height: 520px;
+    border: 2px solid silver;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#display {
+    height: 120px;
+    background-color: lightblue;
+    text-align: right;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#buttons {
+    height: 100%;
+    background-color: lightcoral;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px;
+    grid-template-areas: 
+    "btn-7 btn-8 btn-9 btn-div      .     "
+    "btn-4 btn-5 btn-6 btn-mult     .     "
+    "btn-1 btn-2 btn-3 btn-minus btn-equal"
+    "btn-0   .     .   btn-plus  btn-equal";
+    gap: 2px;
+    justify-content: center;
+    align-content: center;
+}
+
+.btn {
+    font-size: 20px;
+}
+
+.btn-1 {
+    grid-area: btn-1;
+}
+
+.btn-2 {
+    grid-area: btn-2;
+}
+
+.btn-3 {
+    grid-area: btn-3;
+}
+
+.btn-4 {
+    grid-area: btn-4;
+}
+
+.btn-5 {
+    grid-area: btn-5;
+}
+
+.btn-6 {
+    grid-area: btn-6;
+}
+
+.btn-7 {
+    grid-area: btn-7;
+}
+
+.btn-8 {
+    grid-area: btn-8;
+}
+
+.btn-9 {
+    grid-area: btn-9;
+}
+
+.btn-0 {
+    grid-area: btn-0;
+}
+
+.btn-plus {
+    grid-area: btn-plus;
+}
+
+.btn-minus {
+    grid-area: btn-minus;
+}
+
+.btn-div {
+    grid-area: btn-div;
+}
+
+.btn-mult {
+    grid-area: btn-mult;
+}
+
+.btn-equal {
+    grid-area: btn-equal;
+}
