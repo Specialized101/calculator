@@ -5,27 +5,33 @@
 }
 
 #container {
-    width: 520px;
-    height: 520px;
-    border: 2px solid silver;
+    width: 540px;
+    height: 540px;
     margin: 20px auto;
     display: flex;
     flex-direction: column;
 }
 
+#displays{
+    padding: 10px;
+    background-color: #49516F;
+    border: 1px solid black;
+}
+
 #display {
-    height: 120px;
-    background-color: lightblue;
+    height: 80px;
+    background-color: #8EA4D2;
     text-align: right;
-    font-size: 30px;
+    font-size: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    border: 1px solid black;
 }
 
 #buttons {
     height: 100%;
-    background-color: lightcoral;
+    background-color: #49516F;
     display: grid;
     grid-template-columns: 100px 100px 100px 100px 100px;
     grid-template-rows: 100px 100px 100px 100px;
@@ -34,13 +40,18 @@
     "btn-4 btn-5 btn-6   btn-mult  btn-del  "
     "btn-1 btn-2 btn-3   btn-minus btn-equal"
     "btn-0 btn-0 btn-dot btn-plus  btn-equal";
-    gap: 2px;
+    gap: 4px;
     justify-content: center;
     align-content: center;
 }
 
 .btn {
     font-size: 45px;
+    border: none;
+}
+
+.btn:hover{
+    font-size: 50px;
 }
 
 .btn-1 {
@@ -109,4 +120,29 @@
 
 .btn-dot {
     grid-area: btn-dot;
+}
+
+.btn-clear{
+    grid-area: btn-clear;
+    color: white;
+}
+
+.bg-clr-std {
+    background-color: #8EA4D2;
+}
+
+.bg-clr-red {
+    background-color: #D8315B;
+}
+
+.bg-clr-yellow {
+    background-color: #EDCB96;
+}
+
+.bg-clr-green {
+    background-color: #6BAA75;
+}
+
+.bg-clr-black {
+    background-color: #0e103d;
 }
