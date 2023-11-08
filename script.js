@@ -68,6 +68,12 @@ operatorButtons.forEach(button => {
                 if (displayValue.includes('.'))
                     disableDotButton(true);
                 break;
+            case 'del':
+                displayValue = displayValue.replace(
+                    displayValue.charAt(displayValue.length - 1), ''
+                );
+                updateDisplay();
+                break;
             case 'clear':
                 displayValue = '';
                 firstNumber = null;
